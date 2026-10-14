@@ -1,110 +1,329 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RIPPLE Initiative</title>
+  <meta name="theme-color" content="#fff7fb">
+  <meta name="description" content="RIPPLE Initiative is a youth-led movement promoting kindness, community service, and support for children and elderly people.">
+  <title>RIPPLE Initiative | Small Acts, Bigger Ripples</title>
 
   <style>
+    :root {
+      --pink: #f7c6dc;
+      --light-pink: #fff7fb;
+      --dark-pink: #8b4567;
+      --deep-pink: #71334f;
+      --white: #ffffff;
+      --text: #39313a;
+      --muted: #706570;
+      --shadow: 0 8px 28px rgba(100, 45, 75, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #fff7fb;
-      color: #333;
+      background: var(--light-pink);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--dark-pink);
     }
 
     header {
-      background: #f7c6dc;
-      padding: 25px;
+      background: linear-gradient(135deg, #f7c6dc, #fde8f1);
+      padding: 48px 20px 42px;
       text-align: center;
     }
 
-    header h1 {
+    .logo {
+      font-size: clamp(42px, 8vw, 64px);
+      font-weight: 800;
+      letter-spacing: 9px;
       margin: 0;
-      font-size: 42px;
-      letter-spacing: 3px;
+      color: var(--deep-pink);
     }
 
     header p {
-      font-size: 17px;
+      margin: 8px 0 0;
+      font-size: 16px;
     }
 
     nav {
-      background: #ffffff;
-      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.97);
+      padding: 15px 12px;
       text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
     }
 
     nav a {
-      margin: 0 12px;
+      display: inline-block;
+      margin: 5px 10px;
       text-decoration: none;
-      color: #8b4567;
+      font-size: 14px;
       font-weight: bold;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: var(--deep-pink);
+      text-decoration: underline;
     }
 
     .hero {
       text-align: center;
-      padding: 80px 20px;
+      padding: 95px 20px 85px;
+      background:
+        radial-gradient(ellipse at top, #fce5ef 0%, transparent 65%);
+    }
+
+    .eyebrow {
+      color: var(--dark-pink);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .hero h2 {
-      font-size: 38px;
-      color: #8b4567;
+      max-width: 850px;
+      margin: 14px auto;
+      color: var(--deep-pink);
+      font-size: clamp(32px, 6vw, 52px);
+      line-height: 1.2;
     }
 
     .hero p {
-      max-width: 700px;
-      margin: auto;
-      font-size: 19px;
-      line-height: 1.7;
+      max-width: 720px;
+      margin: 20px auto;
+      font-size: 18px;
+      color: #594b56;
     }
 
     .button {
       display: inline-block;
-      margin-top: 25px;
-      padding: 14px 28px;
-      background: #8b4567;
-      color: white;
+      margin: 12px 6px 0;
+      padding: 13px 25px;
+      background: var(--dark-pink);
+      color: var(--white);
       text-decoration: none;
-      border-radius: 25px;
+      border: 2px solid var(--dark-pink);
+      border-radius: 30px;
       font-weight: bold;
+      transition: 0.2s ease;
+    }
+
+    .button:hover,
+    .button:focus {
+      background: var(--deep-pink);
+      transform: translateY(-2px);
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--dark-pink);
     }
 
     section {
-      padding: 55px 20px;
-      max-width: 900px;
+      padding: 70px 22px;
+      max-width: 1050px;
       margin: auto;
+      scroll-margin-top: 75px;
     }
 
     section h2 {
       text-align: center;
-      color: #8b4567;
-      font-size: 30px;
+      color: var(--deep-pink);
+      font-size: clamp(27px, 4vw, 36px);
+      line-height: 1.25;
+      margin: 0 0 20px;
+    }
+
+    .section-intro {
+      max-width: 740px;
+      margin: 0 auto 30px;
+      text-align: center;
+      color: var(--muted);
     }
 
     .cards {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+      margin-top: 32px;
     }
 
     .card {
+      background: var(--white);
+      padding: 28px 24px;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      border: 1px solid #f6e3ec;
+    }
+
+    .card h3 {
+      color: var(--dark-pink);
+      margin-top: 0;
+    }
+
+    .card p {
+      margin-bottom: 0;
+    }
+
+    .icon {
+      font-size: 30px;
+    }
+
+    .soft-section {
+      background: #fdebf3;
+      max-width: none;
+    }
+
+    .inner {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .founder-panel {
+      max-width: 800px;
+      margin: 30px auto 0;
       background: white;
-      padding: 25px;
-      border-radius: 15px;
-      width: 240px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      padding: 32px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
       text-align: center;
     }
 
+    .founder-symbol {
+      width: 88px;
+      height: 88px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 18px;
+      background: #fde4ef;
+      border-radius: 50%;
+      font-size: 40px;
+    }
+
+    .values {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .value {
+      background: #fde7f0;
+      color: var(--deep-pink);
+      border-radius: 25px;
+      padding: 9px 16px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .project-status {
+      display: inline-block;
+      padding: 5px 10px;
+      margin-bottom: 12px;
+      border-radius: 20px;
+      background: #fff0d9;
+      color: #79531b;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .impact-note {
+      margin: 28px auto 0;
+      max-width: 760px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .callout {
+      background: white;
+      border-radius: 20px;
+      padding: 32px;
+      margin-top: 28px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .callout h3 {
+      color: var(--deep-pink);
+      margin-top: 0;
+    }
+
     footer {
-      background: #8b4567;
+      background: var(--deep-pink);
       color: white;
       text-align: center;
-      padding: 30px;
-      margin-top: 40px;
+      padding: 38px 20px;
+    }
+
+    footer p {
+      margin: 7px 0;
+    }
+
+    footer a {
+      color: white;
+    }
+
+    .footer-motto {
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 35px 15px;
+      }
+
+      nav {
+        position: static;
+      }
+
+      nav a {
+        margin: 6px 8px;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 65px 20px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      section {
+        padding: 52px 20px;
+      }
+
+      .founder-panel,
+      .callout {
+        padding: 24px 19px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
     }
   </style>
 </head>
@@ -112,84 +331,289 @@
 <body>
 
   <header>
-    <h1>RIPPLE</h1>
+    <h1 class="logo">RIPPLE</h1>
     <p>RIPPLE Initiative — One act. One person. One ripple.</p>
-    <--saved-- >
   </header>
 
-  <nav>
+  <nav aria-label="Main navigation">
     <a href="#about">About</a>
+    <a href="#mission">Our Mission</a>
+    <a href="#founder">Founder</a>
+    <a href="#projects">Projects</a>
     <a href="#impact">Our Impact</a>
-    <a href="#involved">Get Involved</a>
+    <a href="#partners">Partners</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <div class="hero">
-    <h2>Small Acts. Bigger Ripples. 🌊</h2>
-    <p>
-      RIPPLE Initiative is a youth-led social impact movement dedicated
-      to bringing hope, kindness, and meaningful support to children
-      and elderly people, starting in our school community in Nigeria
-      and growing towards global impact.
-    </p>
+  <main>
 
-    <a class="button" href="#involved">Join the Ripple</a>
-  </div>
-
-  <section id="about">
-    <h2>About RIPPLE</h2>
-    <p>
-      We believe that positive change does not always begin with something
-      huge. Sometimes, it begins with one person choosing to care.
-      RIPPLE gives young people opportunities to turn kindness into action
-      and create meaningful change in their communities.
-    </p>
-  </section>
-
-  <section id="impact">
-    <h2>Our Impact</h2>
-
-    <div class="cards">
-      <div class="card">
-        <h3>💗 Children</h3>
-        <p>Supporting children through kindness, resources and community action.</p>
-      </div>
-
-      <div class="card">
-        <h3>👵 Elderly</h3>
-        <p>Bringing companionship, care and practical support to elderly people.</p>
-      </div>
-
-      <div class="card">
-        <h3>🤝 Community</h3>
-        <p>Encouraging young people to become positive change-makers.</p>
-      </div>
+    <div class="hero">
+      <div class="eyebrow">Kindness starts with us</div>
+      <h2>Small Acts. Bigger Ripples. 🌊</h2>
+      <p>
+        We believe that one act of kindness can inspire another.
+        RIPPLE Initiative is a youth-led social impact movement
+        working towards a world where children, elderly people,
+        and communities feel seen, valued, and supported.
+      </p>
+      <a class="button" href="#get-involved">Be Part of the Ripple</a>
+      <a class="button secondary" href="#about">Discover Our Mission</a>
     </div>
-  </section>
 
-  <section id="involved">
-    <h2>Get Involved</h2>
-    <p style="text-align:center;">
-      You can become part of the ripple by volunteering, partnering with us,
-      supporting a project or sharing our mission.
-    </p>
+    <section id="about">
+      <h2>About RIPPLE</h2>
+      <p class="section-intro">
+        Change does not always begin with something huge.
+        Sometimes, it begins with one person choosing to care.
+      </p>
+      <p>
+        RIPPLE Initiative is a youth-led initiative originating in Nigeria
+        with a vision of encouraging compassion, service, and meaningful
+        community action. We aim to create opportunities for young people
+        to support children, show care for elderly people, and contribute
+        positively to their communities.
+      </p>
+      <p>
+        Our journey begins with small, achievable actions and a commitment
+        to learning, responsibility, and lasting positive change.
+      </p>
+    </section>
 
-    <div style="text-align:center;">
-      <a class="button" href="https://forms.google.com">Volunteer / Ask RIPPLE</a>
+    <div class="soft-section">
+      <section id="mission" class="inner">
+        <h2>Our Mission & Vision</h2>
+        <div class="cards">
+          <div class="card">
+            <div class="icon">💗</div>
+            <h3>Our Mission</h3>
+            <p>
+              To inspire young people to turn compassion into action
+              through community service, kindness, and support for
+              children and elderly people.
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">🌍</div>
+            <h3>Our Vision</h3>
+            <p>
+              To grow a connected community of young changemakers
+              whose small acts of kindness create a wider culture
+              of care, dignity, and inclusion.
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">✨</div>
+            <h3>Our Values</h3>
+            <p>
+              Compassion, dignity, integrity, inclusion,
+              youth leadership, and responsible service guide
+              the work we hope to do.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
-  </section>
 
-  <section id="contact">
-    <h2>Contact RIPPLE</h2>
-    <p style="text-align:center;">
-      Interested in partnering, sponsoring or supporting RIPPLE?
-      We'd love to hear from you.
-    </p>
-  </section>
+    <section id="founder">
+      <h2>Meet the Founder</h2>
+      <p class="section-intro">
+        Every ripple begins somewhere. Ours begins with a belief
+        that young people can help make their communities better.
+      </p>
+      <div class="founder-panel">
+        <div class="founder-symbol" aria-hidden="true">🌸</div>
+        <h3 style="color: #71334f;">A Young Nigerian Changemaker</h3>
+        <p>
+          RIPPLE Initiative was founded by a Nigerian secondary-school
+          student who believes that kindness should become action.
+          The initiative was created to explore practical ways young
+          people can contribute to the wellbeing of children, elderly
+          people, and the wider community.
+        </p>
+        <p>
+          As RIPPLE develops, its founder is committed to learning,
+          building responsible partnerships, documenting real progress,
+          and growing the initiative one meaningful step at a time.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Our Projects & Focus Areas</h2>
+      <p class="section-intro">
+        We are developing practical ways to turn our mission into
+        meaningful community action. Activities will be shared as
+        they are organized and completed.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <div class="icon">📚</div>
+          <span class="project-status">Planned initiative</span>
+          <h3>Ripple for Children</h3>
+          <p>
+            Exploring educational-material collections and other
+            appropriate ways to support children's learning and wellbeing.
+          </p>
+        </div>
+        <div class="card">
+          <div class="icon">👵</div>
+          <span class="project-status">Planned initiative</span>
+          <h3>Ripple for the Elderly</h3>
+          <p>
+            Exploring respectful visits, companionship, and practical
+            community support for elderly people, with appropriate
+            permission and supervision.
+          </p>
+        </div>
+        <div class="card">
+          <div class="icon">🤝</div>
+          <span class="project-status">Developing</span>
+          <h3>Youth Kindness Campaign</h3>
+          <p>
+            Encouraging students and young people to practise empathy,
+            inclusion, and everyday acts of kindness.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="soft-section">
+      <section id="impact" class="inner">
+        <h2>Our Impact</h2>
+        <p class="section-intro">
+          We believe meaningful impact should be honest, measurable,
+          and built through consistent action.
+        </p>
+        <div class="cards">
+          <div class="card">
+            <div class="icon">💗</div>
+            <h3>Care for Children</h3>
+            <p>
+              Working towards opportunities that support children's
+              learning, dignity, and wellbeing.
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">🌷</div>
+            <h3>Respect for Elders</h3>
+            <p>
+              Promoting companionship, dignity, and care for older
+              members of our communities.
+            </p>
+          </div>
+          <div class="card">
+            <div class="icon">🌊</div>
+            <h3>Youth Leadership</h3>
+            <p>
+              Encouraging young people to take responsible action
+              and become thoughtful community contributors.
+            </p>
+          </div>
+        </div>
+        <p class="impact-note">
+          RIPPLE is at an early stage. Verified activity reports,
+          project results, and impact figures will be added as
+          activities take place. We will not publish unverified
+          numbers or claim projects have been completed before they are.
+        </p>
+      </section>
+    </div>
+
+    <section id="get-involved">
+      <h2>Be Part of the Ripple</h2>
+      <p class="section-intro">
+        Meaningful change is easier when people work together.
+        There are several ways to support RIPPLE as it grows.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <div class="icon">🙋</div>
+          <h3>Volunteer</h3>
+          <p>
+            Help us explore responsible, school-approved community
+            activities and youth kindness campaigns.
+          </p>
+        </div>
+        <div class="card">
+          <div class="icon">🏢</div>
+          <h3>Partner With Us</h3>
+          <p>
+            Organizations, schools, and community groups can explore
+            opportunities to collaborate on suitable projects.
+          </p>
+        </div>
+        <div class="card">
+          <div class="icon">📣</div>
+          <h3>Spread the Word</h3>
+          <p>
+            Share the idea of kindness in action and help more
+            people discover the RIPPLE mission.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="soft-section">
+      <section id="partners" class="inner">
+        <h2>Partner With RIPPLE</h2>
+        <p class="section-intro">
+          We welcome conversations with people and organizations
+          interested in youth leadership, community development,
+          children's wellbeing, and elderly care.
+        </p>
+        <div class="callout">
+          <h3>Let's Create Something Meaningful</h3>
+          <p>
+            Potential partners may be able to contribute guidance,
+            educational materials, volunteer support, resources,
+            or funding for an agreed project.
+          </p>
+          <p>
+            All partnerships will be discussed transparently,
+            with clear goals and responsible use of resources.
+          </p>
+          <a class="button" href="#contact">Discuss a Partnership</a>
+        </div>
+      </section>
+    </div>
+
+    <section id="contact">
+      <h2>Contact RIPPLE</h2>
+      <p class="section-intro">
+        Interested in volunteering, supporting a project, or discussing
+        a partnership? We would love to hear from you.
+      </p>
+      <div class="callout">
+        <div class="icon">💌</div>
+        <h3>Let's Connect</h3>
+        <p>
+          Our official contact channel is being set up.
+          Please check back for verified contact details and
+          volunteer registration information.
+        </p>
+        <p>
+          We will publish a dedicated contact address or registration
+          form here once it is ready.
+        </p>
+      </div>
+    </section>
+
+    <section id="future">
+      <h2>Growing One Ripple at a Time</h2>
+      <p class="section-intro">
+        Our long-term hope is to begin locally, learn from every
+        project, build meaningful partnerships, and connect with
+        young changemakers beyond our community and across borders.
+      </p>
+    </section>
+
+  </main>
 
   <footer>
-    <p>© 2026 RIPPLE Initiative</p>
-    <p>One act. One person. One ripple. 🌊</p>
+    <p class="footer-motto">RIPPLE INITIATIVE 🌊</p>
+    <p>One act. One person. One ripple.</p>
+    <p>Building a culture of kindness, one step at a time.</p>
+    <p>© 2026 RIPPLE Initiative. All rights reserved.</p>
   </footer>
 
 </body>
